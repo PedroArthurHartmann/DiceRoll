@@ -1,5 +1,6 @@
 package com.example.diceroll.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModel
@@ -26,12 +27,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindListeners() {
+
+        bind.btShowList.setOnClickListener {
+
+            val intent = Intent(this, DiceListActivity::class.java)
+            intent.putExtra("SIDES", viewModel.getDiceSides())
+
+            startActivity(intent)
+        }
+
         bind.btRoll.setOnClickListener {
             viewModel.roll()
-
-            //bind.tvNumGenerated.text = getString(R.string.result_txt, Dice().roll())
         }
-        
+
         viewModel.result.observe(this) {
             bind.tvNumGenerated.text = getString(R.string.result_txt, it)
         }

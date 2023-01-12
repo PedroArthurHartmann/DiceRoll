@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dice Roll</string>
+    <string name="result_txt">Result is %d</string>
 </resources>

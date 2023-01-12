@@ -2,4 +2,5 @@
     <string name="app_name">Dice Roll</string>
     <string name="result_txt">Result is %d</string>
     <string name="list_of_possibilities">List of possibilities of a dice of %d sides</string>
+    <string name="possibility_n">Possibility %d</string>
 </resources>
